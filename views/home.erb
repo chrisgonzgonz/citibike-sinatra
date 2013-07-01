@@ -1,1 +1,14 @@
-<%= @data.inspect %>
+<h1>Here's a list of the Citibike stations, latitudes, and longitudes</h1>
+
+<ul>
+<% @data.each do |location| %>
+
+<li><b>Location <%= location["id"]+1 %>:</b> <%= location["name"] %></li>
+  <ul>
+    <li><em>Latitude:</em> <%= location["lat"] / 1000000.0 %></li>
+    <li><em>Longitude:</em> <%= location["lng"] / 1000000.0 %></li>
+  </ul>
+
+<% end %>
+</ul>
+
